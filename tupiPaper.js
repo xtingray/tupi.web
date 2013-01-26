@@ -32,7 +32,7 @@ function onMouseUp(event) {
 		path.strokeColor = '#e4141b';
 	}
 	if(paths.length >= 3){
-		paper.view.toSVG();
+		document.getElementById('svg').appendChild(project.exportSvg());
 	}
 }
 
