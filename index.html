@@ -7,6 +7,8 @@
 <style>
 #test{
 border: 2px solid blue;
+width: 310px;
+height: 450px;
 }
 #test1{
 hidden;
@@ -30,17 +32,17 @@ hidden;
  <div id="test">
 	<canvas id="canvas" resize </canvas>
 	</div>
- 	<div id="test1">
- 		<svg id="svg" style="hidden"></svg>
- 	</div>
-  <div id="controls">
-
+   <div id="controls">
     <input id="color-button" class="color" type="button" value="66ff00" onchange="changeStyleColor();"></input>
     <input id="button" class="button" type="button" value="+" onclick="changeStrokeSize(2);"></input>
     <input id="button" class="button" type="button" value="-" onclick="changeStrokeSize(-2);"></input>
-    <input class="btn btn-primary" id="submit-button" type="button" value="Sube el Dibujo a Tupi"></input>
-
+    <input id="button" class="button" type="button" value="Undo" onclick="undo():"></input>
+    <input class="btn btn-primary btn-small" id="submit-button" type="button" value="tupitube.com"></input>
   </div>
+  	<div id="test1">
+ 		<svg id="svg" style="hidden"></svg>
+ 	</div>
+
 
 </body>
 </html>
