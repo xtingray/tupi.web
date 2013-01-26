@@ -104,26 +104,16 @@ $(document).ready(function() {
 		function onMouseMove(event) {
 			if(isMouseDown)
 				path.add(event.point);
-			//segments[0].point = event.point;
-			//for (var i = 0; i < size - 1; i++) {
-			//	var nextSegment = segments[i + 1];
-			//	var position = path.segments[i].point;
-			//	var angle = (position - nextSegment.point).angle;
-			//	var vector = new Point({ angle: angle, length: 35 });
-			//	nextSegment.point = position - vector;
-			// }
-			//path.smooth();
 		}
 
 		function onMouseDown(event) {
-			//path.smooth();
 			isMouseDown = true;
-			path.add(event.point);
 			//path.fullySelected = true;
 			//path.strokeColor = '#e08285';			
 		}
 
 		function onMouseUp(event) {
+			path.smooth();
 			isMouseDown = false;
 			path.fullySelected = false;
 			path.strokeColor = '#e4141b';
