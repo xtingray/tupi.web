@@ -13,13 +13,20 @@ var pathStyle = {
 
 $( function(){
    console.log("adsfasdfasdf");
-   $('#color-button').click(function(){
-     console.log("hello world");
-   });
+
+   
 	paper.setup("canvas");
-  }
-  
-)
+
+   $('#submit-button').click(function(){
+     document.getElementById('svg').appendChild(paper.project.exportSvg());
+     var svg = $('<div>').append($('#svg').clone()).html();
+     $.post("http://tupitube.com/svg/upload/file",{'svg':svg})
+   });
+
+
+
+
+})
 
 function changeStrokeColor(){
 	document.getElementById('svg').appendChild(paper.project.exportSvg());
