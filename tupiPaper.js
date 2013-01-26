@@ -1,21 +1,14 @@
-// Adapted from the following Processing example:
-// http://processing.org/learning/topics/follow3.html
+//Tupi.web PaperScipt.Js Code
 
 var isMouseDown = false;
 var paths = [];
+var undoPaths = [];
 var path;
-//
-// var path = new Path();
-// path.style = {
-// strokeColor : '#E4141B',
-// strokeWidth : 5,
-// strokeCap : 'round'
-// };
-//var size = 25;
-//var segments = path.segments;
-//var start = view.center / [10, 1];
-//for (var i = 0; i < size; i++)
-//	path.add(start + new Point(i * 100, 0));
+var pathStyle = {
+		strokeColor : '#E4141B',
+		strokeWidth : 2,
+		strokeCap : 'butt'
+	}; 
 
 function onMouseMove(event) {
 	if (isMouseDown) {
@@ -26,13 +19,8 @@ function onMouseMove(event) {
 function onMouseDown(event) {
 	isMouseDown = true;
 	path = new Path();
-	path.style = {
-		strokeColor : '#E4141B',
-		strokeWidth : 5,
-		strokeCap : 'round'
-	};
-	//path.fullySelected = true;
-	//path.strokeColor = '#e08285';
+	path.style = pathStyle;
+
 }
 
 function onMouseUp(event) {
@@ -43,4 +31,18 @@ function onMouseUp(event) {
 		path.fullySelected = false;
 		path.strokeColor = '#e4141b';
 	}
+}
+
+function undo(){
+		pathToRemove = paths.pop();
+		if(pathToRemove.remove())
+			undoPaths.push(pathToRemove);
+}
+
+function redo(){
+	pathToRestore = undoPaths.pop();
+}
+
+function setPathStyle(style){
+	pathStyle = style;
 }

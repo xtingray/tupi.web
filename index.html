@@ -9,78 +9,10 @@ border: 2px solid blue;
 #install_button {
   padding-top: 3px;
 
-position: relative;
-float: right;
-font: normal normal bold 10pt/normal Helvetica;
-font-size: 16px;
-vertical-align: middle;
-text-align: center;
-letter-spacing: -0.5px;
-color: rgb(255,255,255);
-text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
-width: 140px;
-height: 28px;
-line-height: 26px;
-border: 1px solid rgba(0,0,0,0.2);
-
--moz-border-radius: 1em;
--webkit-border-radius: 1em;
-border-radius: 1em;
-
--moz-box-shadow:
-inset rgba(218,255,191,1) 0 1px 0px,
-inset rgba(0,0,0,0.2) 0 -2px 0px,
-rgba(0,0,0,0.1) 0 2px 0px;
--webkit-box-shadow:
-inset rgba(218,255,191,1) 0 1px 0px,
-inset rgba(0,0,0,0.2) 0 -2px 0px,
-rgba(0,0,0,0.1) 0 2px 0px;
--box-shadow:
-inset rgba(218,255,191,1) 0 1px 0px,
-inset rgba(0,0,0,0.2) 0 -2px 0px,
-rgba(0,0,0,0.1) 0 2px 0px;
-
-background-color: rgb(134,214,106); /* for non-css3 browsers */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(134,214,106,1)), to(rgba(78,152,52,1))); /* for webkit browsers */
-background: -moz-linear-gradient(top,  rgba(134,214,106,1), rgba(78,152,52,1)); /* for firefox 3.6+ */
-
-
-display: block;
-}
-</style>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/css/main.css">
 <script src="jquery-1.4.2.min.js"></script>
 <script src="include.js"></script>
-<script>
 
-var gManifestName = "/manifest.webapp";
-
-$(document).ready(function() {
-  var request = navigator.mozApps.getSelf();
-	request.onsuccess = function() {
-	  if (request.result) {
-	    // we're installed
-	    $("#install_button").text("INSTALLED!").show();
-	  } else {
-	    // not installed
-	    $("#install_button").show();
-            $("#install_button").click(function() {
-		var req = navigator.mozApps.install(gManifestName);
-		req.onsuccess = function() {
-                    $("#install_button").text("INSTALLED!").unbind('click');
-                }
-		req.onerror = function(errObj) {
-                    alert("Couldn't install (" + errObj.code + ") " + errObj.message);
-                }
-            });
-	  }
-	}
-	request.onerror = function() {
-	  alert('Error checking installation status: ' + this.error.message);
-	}
-});
-
-</script>
 
 <script src="paper.js"></script>
 <script type="text/paperscript" canvas="canvas" src="tupiPaper.js">
