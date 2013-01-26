@@ -31,6 +31,9 @@ function onMouseUp(event) {
 		path.fullySelected = false;
 		path.strokeColor = '#e4141b';
 	}
+	if(paths.length >= 3){
+		paper.view.toSVG();
+	}
 }
 
 function undo(){
