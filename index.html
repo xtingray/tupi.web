@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MozillaBall</title>
+<title>Tupi.web</title>
 <style>
 #test{
 border: 1px solid red;
@@ -50,7 +50,7 @@ display: block;
 </style>
 <link rel="stylesheet" href="style.css">
 <script src="jquery-1.4.2.min.js"></script>
-<script src="https://myapps.mozillalabs.com/jsapi/include.js"></script>
+<script src="include.js"></script>
 <script>
 
 var gManifestName = "/manifest.webapp";
@@ -87,36 +87,44 @@ $(document).ready(function() {
 		// Adapted from the following Processing example:
 		// http://processing.org/learning/topics/follow3.html
 
+		var isMouseDown = false;
+		var paths = []; 
 		var path = new Path();
 		path.style = {
 			strokeColor: '#E4141B',
-			strokeWidth: 20,
+			strokeWidth: 5,
 			strokeCap: 'round'
 		};
 		var size = 25;
 		var segments = path.segments;
 		var start = view.center / [10, 1];
-		for (var i = 0; i < size; i++)
-			path.add(start + new Point(i * 100, 0));
+		//for (var i = 0; i < size; i++)
+		//	path.add(start + new Point(i * 100, 0));
 
 		function onMouseMove(event) {
-			segments[0].point = event.point;
-			for (var i = 0; i < size - 1; i++) {
-				var nextSegment = segments[i + 1];
-				var position = path.segments[i].point;
-				var angle = (position - nextSegment.point).angle;
-				var vector = new Point({ angle: angle, length: 35 });
-				nextSegment.point = position - vector;
-			}
-			path.smooth();
+			if(isMouseDown)
+				path.add(event.point);
+			//segments[0].point = event.point;
+			//for (var i = 0; i < size - 1; i++) {
+			//	var nextSegment = segments[i + 1];
+			//	var position = path.segments[i].point;
+			//	var angle = (position - nextSegment.point).angle;
+			//	var vector = new Point({ angle: angle, length: 35 });
+			//	nextSegment.point = position - vector;
+			// }
+			//path.smooth();
 		}
 
 		function onMouseDown(event) {
-			path.fullySelected = true;
-			path.strokeColor = '#e08285';
+			//path.smooth();
+			isMouseDown = true;
+			path.add(event.point);
+			//path.fullySelected = true;
+			//path.strokeColor = '#e08285';			
 		}
 
 		function onMouseUp(event) {
+			isMouseDown = false;
 			path.fullySelected = false;
 			path.strokeColor = '#e4141b';
 		}
