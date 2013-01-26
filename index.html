@@ -2,23 +2,39 @@
 <html>
 <head>
 <title>Tupi.web</title>
-
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="css/main.css">
+<style>
+
+
+  #test{
+  border: 2px solid blue;
+  }
+
+  #install_button {
+    padding-top: 3px;
+  }
+</style>
+
+<link rel="stylesheet" href="/css/main.css">
 <script src="jquery-1.4.2.min.js"></script>
 <script src="include.js"></script>
 <script src="paper.js"></script>
-<script type="text/paperscript" canvas="canvas" src="tupiPaper.js">
-	</script>
+<script type="text/paperscript" canvas="canvas" src="tupiPaper.js"></script>
+<script type="text/javascript" src="js/libs/jscolor/jscolor.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
 </head>
 
-
 <body>
- <div id="test">
-	<canvas id="canvas" resize></canvas>
- <div>
- <div>
 
- </div>
+  <div id="test">
+    <canvas id="canvas" resize></canvas>
+  </div>
+
+  <div id="controls">
+    <input id="color-button" class="color" type="button" value="66ff00"></input>
+  </div>
+
 </body>
 </html>
