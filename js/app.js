@@ -1,4 +1,4 @@
-//Tupi.web PaperScipt.Js Code
+//Tupi.web JavaScript.Js Code
 
 var isMouseDown = false;
 var paths = [];
@@ -23,4 +23,12 @@ $( function(){
 
 function changeStrokeColor(){
 	document.getElementById('svg').appendChild(paper.project.exportSvg());
+}
+
+function changeStyleColor(){
+	pathStyle.strokeColor = '#'+ $('#color-button').val();
+}
+
+function changeStrokeSize(change){
+	pathStyle.strokeWidth = pathStyle.strokeWidth+change;
 }

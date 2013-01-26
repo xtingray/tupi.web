@@ -34,7 +34,9 @@ hidden;
  		<svg id="svg" style="hidden"></svg>
  	</div>
   <div id="controls">
-    <input id="color-button" class="color" type="button" value="66ff00"></input>
+    <input id="color-button" class="color" type="button" value="66ff00" onchange="changeStyleColor();"></input>
+    <input id="button" class="button" type="button" value="+" onclick="changeStrokeSize(2);"></input>
+    <input id="button" class="button" type="button" value="-" onclick="changeStrokeSize(-2);"></input>
   </div>
 
 </body>

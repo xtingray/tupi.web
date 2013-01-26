@@ -1,4 +1,4 @@
-//Tupi.web PaperScipt.Js Code
+//Tupi.web PaperScript.Js Code
 
 
 function onMouseMove(event) {
@@ -11,7 +11,6 @@ function onMouseDown(event) {
 	isMouseDown = true;
 	path = new Path();
 	path.style = pathStyle;
-	path.strokeColor= '#'+ $('#color-button').val();
 }
 
 function onMouseUp(event) {
@@ -20,7 +19,6 @@ function onMouseUp(event) {
 		path.smooth();
 		paths.push(path);
 		path.fullySelected = false;
-		path.strokeColor = '#'+ $('#color-button').val();
 	}
 
 }
