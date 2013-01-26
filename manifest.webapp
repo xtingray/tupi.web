@@ -7,8 +7,8 @@
     },
     "description":"Tupi web client.",
     "icons":{
-        "16":"/img/tupi16.png",
-        "32":"/img/tupi32.png",
-        "64":"/img/tupi64.png"
+        "16":"/images/tupi16.png",
+        "32":"/images/tupi32.png",
+        "64":"/images/tupi64.png"
     }
 }
