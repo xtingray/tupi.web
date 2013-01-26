@@ -1,14 +1,5 @@
 //Tupi.web PaperScipt.Js Code
 
-var isMouseDown = false;
-var paths = [];
-var undoPaths = [];
-var path;
-var pathStyle = {
-		strokeColor : '#E4141B',
-		strokeWidth : 2,
-		strokeCap : 'butt'
-	}; 
 
 function onMouseMove(event) {
 	if (isMouseDown) {
@@ -31,9 +22,7 @@ function onMouseUp(event) {
 		path.fullySelected = false;
 		path.strokeColor = '#'+ $('#color-button').val();
 	}
-	if(paths.length >= 3){
-		document.getElementById('svg').appendChild(project.exportSvg());
-	}
+
 }
 
 function undo(){
@@ -49,3 +38,4 @@ function redo(){
 function setPathStyle(style){
 	pathStyle = style;
 }
+
