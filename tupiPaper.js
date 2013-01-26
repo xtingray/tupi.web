@@ -20,7 +20,7 @@ function onMouseDown(event) {
 	isMouseDown = true;
 	path = new Path();
 	path.style = pathStyle;
-
+	path.strokeColor= '#'+ $('#color-button').val();
 }
 
 function onMouseUp(event) {
@@ -29,7 +29,7 @@ function onMouseUp(event) {
 		path.smooth();
 		paths.push(path);
 		path.fullySelected = false;
-		path.strokeColor = '#e4141b';
+		path.strokeColor = '#'+ $('#color-button').val();
 	}
 	if(paths.length >= 3){
 		document.getElementById('svg').appendChild(project.exportSvg());
