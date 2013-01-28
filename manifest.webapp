@@ -5,7 +5,7 @@
         "name":"Tupi Developers Team Firefox OS AppsDays",
         "url":"http://maefloresta.com"
     },
-    "description":"Tupi web client.",
+    "description":"Tupi WebApp Client",
     "fullscreen": "true",
     "orientation": ["portrait"],
     "icons":{
