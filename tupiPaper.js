@@ -16,7 +16,7 @@ function onMouseDown(event) {
 function onMouseUp(event) {
 	isMouseDown = false;
 	if (path) {
-		path.smooth();
+		path.simplify();
 		paths.push(path);
 		path.fullySelected = false;
 	}
