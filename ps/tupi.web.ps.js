@@ -1,39 +1,24 @@
 //Tupi.web PaperScript.Js Code
 
 
-function onMouseMove(event) {
-	if (isMouseDown) {
-		path.add(event.point);
-	}
+function onMouseMove (event) {
+
 }
 
 function onMouseDown(event) {
-	isMouseDown = true;
 	path = new Path();
 	path.style = pathStyle;
 }
 
+function onMouseDrag(event){
+	path.add(event.point);
+}
+
 function onMouseUp(event) {
-	isMouseDown = false;
 	if (path) {
 		path.simplify();
-		paths.push(path);
-		path.fullySelected = false;
+		visibleItems.push(path);
 	}
 
-}
-
-function undo(){
-		pathToRemove = paths.pop();
-		if(pathToRemove.remove())
-			undoPaths.push(pathToRemove);
-}
-
-function redo(){
-	pathToRestore = undoPaths.pop();
-}
-
-function setPathStyle(style){
-	pathStyle = style;
 }
 
