@@ -6782,8 +6782,11 @@ new function() {
 
 	Project.inject({
 		exportSvg: function() {
-			var svg = createElement('svg'),
+			//Changed to support more compatibility.
+			//TODO Add width and height attributes corresponding the canvas.
+			var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'), 
 				layers = this.layers;
+				svg.setAttributeNS(null,'version','1.1');				
 			for (var i = 0, l = layers.length; i < l; i++)
 				svg.appendChild(layers[i].exportSvg());
 			return svg;

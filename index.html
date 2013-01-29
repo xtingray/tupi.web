@@ -2,10 +2,13 @@
 <html>
 	<head>
 		<title>Tupi.web</title>
+		
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="css/jquery.svg/jquery.svg.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<script type="text/javascript" src="js/libs/jquery/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery/jquery-1.4.2_svgmod.js"></script>
+		<script type="text/javascript" src="js/libs/jquery/jquery.svg.js"></script>
 		<script type="text/javascript" src="js/libs/paperjs/paper.js"></script>
 		<script type="text/javascript" src="js/libs/jscolor/jscolor.js"></script>
 		<script type="text/javascript" src="js/tupi.web.js"></script>
@@ -17,11 +20,12 @@
 	<body>
 		<div id="mainCanvas">
 			<canvas id="canvas" width="310" height="450"></canvas>
-			</div>
-			<div id="controls">
-			<input id="button_palette" class="color btn_palette" type="button" value="66ff00" onchange="changeStyleColor();"></input>
+		</div>
+		<div id="controls">
+			<input id="button_palette" class="color btn_palette" type="button" value="66ff00" onchange="changeStyleColor();">
+			</input>
 			<button id="button_brushSizePlus" class="btn btn_brushSizePlus"onclick="changeStrokeSize(2);">
-				  <img src="images/plus_sign_small.png" width="16" height="16">
+				<img src="images/plus_sign_small.png" width="16" height="16">
 			</button>
 			<button id="button_brushSizeMinus" class="btn btn_brushSizeMinus" value="-" onclick="changeStrokeSize(-2);">
 				<img src="images/minus_sign_small.png" width="16" height="16">
@@ -35,9 +39,7 @@
 			<input class="btn btn-primary btn-small" id="submit-button" type="button" value="tupitube.com">
 			</input>
 		</div>
-		<div id="hiddenSVG">
-			<svg id="svg" style="hidden"></svg>
-		</div>
+		<div id="hiddenSVG"></div>
 
 	</body>
 </html>

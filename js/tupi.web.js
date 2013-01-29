@@ -14,17 +14,21 @@ paper.install(window);
 $(function() {
 	console.log("Installing PaperScript Global Scope");
 	paper.setup("canvas");
-	$('#submit-button').click(function() {
-		document.getElementById('svg').appendChild(paper.project.exportSvg());
-		var svg = $('<div>').append($('#svg').clone()).html();
-		//$.post("http://tupitube.com/svg/upload/file",{'svg':svg})
-		alert('Subiendo...');
+	$('#submit-button').click(function() {		
+		$('#hiddenSVG').addClass('hasSVG');
+		var svg = paper.project.exportSvg();
+		//This should be done by the PaperScript
+		svg.setAttribute('width', $('#canvas').width());
+        svg.setAttribute('height', $('#canvas').height());
+        $('#hiddenSVG').empty();
+		$('#hiddenSVG').append(svg);		
+		var svg = $('<div>').append($('#hiddenSVG').children().clone()).html();
+		$.post("http://tupitube.com/svg/upload/file",{'svg':svg})		
+		console.log("SVG:" + svg);
+
 	});
 
 })
-function changeStrokeColor() {
-	document.getElementById('svg').appendChild(paper.project.exportSvg());
-}
 
 function changeStyleColor() {
 	pathStyle.strokeColor = '#' + $('#button_palette').val();
