@@ -9,9 +9,10 @@ var pathStyle = {
 	strokeCap : 'butt'
 };
 
+paper.install(window);
+
 $(function() {
 	console.log("Installing PaperScript Global Scope");
-	paper.install(window);
 	paper.setup("canvas");
 	$('#submit-button').click(function() {
 		document.getElementById('svg').appendChild(paper.project.exportSvg());
@@ -34,17 +35,21 @@ function changeStrokeSize(change) {
 }
 
 function undo() {
+
 	pathToUndo = visibleItems.pop();
 	if (pathToUndo) {
 		pathToUndo.visible = false;
 		hiddenItems.push(pathToUndo);
 	}
+	paper.view.draw();
 }
 
 function redo() {
 	pathToRedo = hiddenItems.pop();
-	if(pathToRedo){
+	if (pathToRedo) {
 		pathToRedo.visible = true;
 		visibleItems.push(pathToRedo);
 	}
+	paper.view.draw();
+
 }
