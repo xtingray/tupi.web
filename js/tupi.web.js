@@ -23,6 +23,8 @@ $(function() {
         $('#hiddenSVG').empty();
 		$('#hiddenSVG').append(svg);		
 		var svg = $('<div>').append($('#hiddenSVG').children().clone()).html();
+		//var openURL = new MozActivity({name: "view",data: {type: "url", url:"http://tupitube.com"}});
+		//var shareActivity = new MozActivity({name: "share",data: {type: "url", url:"http://tupitube.com"}});		
 		$.post("http://tupitube.com/svg/upload/file",{'svg':svg})		
 		console.log("SVG:" + svg);
 
