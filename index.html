@@ -2,15 +2,17 @@
 <html>
 	<head>
 		<title>Tupi.web</title>
+
+		<meta content="text/html; charset=UTF-8" />
 		
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" href="css/jquery.svg/jquery.svg.css">
+		<link rel="stylesheet" href="css/colorpicker/themes.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<script type="text/javascript" src="js/libs/jquery/jquery-1.4.2_svgmod.js"></script>
 		<script type="text/javascript" src="js/libs/jquery/jquery.svg.js"></script>
-		<script type="text/javascript" src="js/libs/paperjs/paper.js"></script>
-		<script type="text/javascript" src="js/libs/jscolor/jscolor.js"></script>
+		<script type="text/javascript" src="js/libs/paperjs/paper.js.1"></script>
+		<script type="text/javascript" src="js/libs/colorpicker.js"></script>
 		<script type="text/javascript" src="js/tupi.web.js"></script>
 
 		<script type="text/paperscript" canvas="canvas" src="ps/tupi.web.ps.js"></script>
@@ -22,8 +24,9 @@
 			<canvas id="canvas" width="310" height="450"></canvas>
 		</div>
 		<div id="controls">
-			<input id="button_palette" class="color btn_palette" type="button" value="66ff00" onchange="changeStyleColor();">
-			</input>
+			<button id="button_palette" class="btn btn_palette"onclick="showPalettePopup();">
+				<img src="images/palette.png" width="16" height="16">
+			</button>
 			<button id="button_brushSizePlus" class="btn btn_brushSizePlus"onclick="changeStrokeSize(2);">
 				<img src="images/plus_sign_small.png" width="16" height="16">
 			</button>
@@ -39,7 +42,20 @@
 			<input class="btn btn-primary btn-small" id="submit-button" type="button" value="tupitube.com">
 			</input>
 		</div>
-		<div id="hiddenSVG"></div>
-
+		<div id="popup" class="popupPalette cp cp-small" >
+			<div id="picker-wrapper">
+				<div id="picker"></div>
+				<div id="picker-indicator"></div>
+			</div>
+			<div id="slider-wrapper">
+				<div id="slider"></div>
+				<div id="slider-indicator"></div>
+			</div>
+			<div id = "close-wrapper">
+				<button id="button_closePalette" class="btn btn_undo" value="Close" onclick="closePalettePopup();">
+				<img src="images/close.png"16" height="16">
+			</button>
+			</div>
+		</div>
 	</body>
 </html>
