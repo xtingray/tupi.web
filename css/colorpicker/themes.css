@@ -1,0 +1,142 @@
+
+.picker-wrapper, .slide-wrapper {
+    float: left;
+    position: relative;
+}
+.picker-indicator, .slide-indicator {
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+}
+.picker, .slide {
+    cursor: crosshair;
+    float: left;
+}
+.cp-default {
+    background-color: gray;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 40px #000000;
+    float: left;
+    padding: 12px;
+}
+.cp-default .picker {
+    height: 200px;
+    width: 200px;
+}
+.cp-default .slide {
+    height: 200px;
+    width: 30px;
+}
+.cp-default .slide-wrapper {
+    margin-left: 10px;
+}
+.cp-default .picker-indicator {
+    background-color: white;
+    border: 2px solid darkblue;
+    border-radius: 4px 4px 4px 4px;
+    height: 5px;
+    opacity: 0.5;
+    width: 5px;
+}
+.cp-default .slide-indicator {
+    background-color: white;
+    border: 4px solid lightblue;
+    border-radius: 4px 4px 4px 4px;
+    height: 10px;
+    left: -4px;
+    opacity: 0.6;
+    width: 100%;
+}
+.cp-small {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    padding: 5px;
+}
+.cp-small .picker {
+    height: 100px;
+    width: 100px;
+}
+.cp-small .slide {
+    height: 100px;
+    width: 15px;
+}
+.cp-small .slide-wrapper {
+    margin-left: 5px;
+}
+.cp-small .picker-indicator {
+    background-color: white;
+    border: 1px solid black;
+    height: 1px;
+    width: 1px;
+}
+.cp-small .slide-indicator {
+    background-color: black;
+    height: 2px;
+    left: 0;
+    width: 100%;
+}
+.cp-fancy {
+    border: 1px solid #999999;
+    box-shadow: 0 0 10px white inset;
+    float: left;
+    padding: 10px;
+}
+.cp-fancy .picker {
+    height: 200px;
+    width: 200px;
+}
+.cp-fancy .slide {
+    height: 200px;
+    width: 30px;
+}
+.cp-fancy .slide-wrapper {
+    margin-left: 10px;
+}
+.cp-fancy .picker-indicator {
+    background-image: url("http://cdn1.iconfinder.com/data/icons/fugue/bonus/icons-24/target.png");
+    height: 24px;
+    width: 24px;
+}
+.cp-fancy .slide-indicator {
+    background-image: url("http://cdn1.iconfinder.com/data/icons/bluecoral/Left.png");
+    height: 31px;
+    left: 30px;
+    width: 30px;
+}
+.cp-normal {
+    background-color: white;
+    border: 4px solid #D6D6D6;
+    box-shadow: 0 0 10px white inset;
+    float: left;
+    padding: 10px;
+}
+.cp-normal .picker {
+    height: 200px;
+    width: 200px;
+}
+.cp-normal .slide {
+    height: 200px;
+    width: 30px;
+}
+.cp-normal .slide-wrapper {
+    margin-left: 10px;
+}
+.cp-normal .picker-indicator {
+    background-color: white;
+    border: 1px solid gray;
+    height: 5px;
+    opacity: 0.5;
+    pointer-events: none;
+    width: 5px;
+}
+.cp-normal .slide-indicator {
+    background-color: white;
+    border: 4px solid gray;
+    height: 10px;
+    left: -4px;
+    opacity: 0.6;
+    pointer-events: none;
+    width: 100%;
+}
