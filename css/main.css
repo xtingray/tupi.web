@@ -3,9 +3,6 @@ border: 2px solid blue;
 width: 310px;
 height: 450px;
 }
-#hiddenSVG {
-hidden;
-}
 
 .btn_palette {
 }
@@ -19,3 +16,13 @@ hidden;
 .btn_undo {
 	
 }
+
+.popupPalette {
+    width:200px;
+    height:100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-50px 0 0 -100px; /* [-(height/2)px 0 0 -(width/2)px] */
+    display:none;
+  }
