@@ -28,18 +28,24 @@ function submitCanvas() {
 	tmpDiv.append(svg);
 	var svg = $('<div>').append(tmpDiv.children().clone()).html();
 	var postInfo = {
-		'title' : 'NotImplementedYet',
+		'title' : 'DummyTitle',
 		'version' : 'v0.1',
-		'author' : 'NotImplementedYet',
-		'description' : 'NotImplementedYet',
+		'tags' : '#NotImplementedYet #TagsList',
+		'description' : 'DummyDescription',
 		'svg' : svg
 	}
 	//var openURL = new MozActivity({name: "view",data: {type: "url", url:"http://tupitube.com"}});
-	//var shareActivity = new MozActivity({name: "share",data: {type: "url", url:"http://tupitube.com"}});
-	$.post("http://tupitube.com/svg/upload/file", postInfo, function(data, textStatus, jqHXR) {
-		console.log(textStatus);
-		console.log(data);
-	})
+	//var shareActivity = new MozActivity({name: "share",data: {type: "url", url:"http://tupitu.be"}});
+	$.post("http://tupitu.be/svg/upload/file", postInfo, function(response) {	
+		console.log(response);
+		var shareActivity = new MozActivity(
+		{name: "view", 
+		data: {
+			type: "url", 
+			url: response}
+			});
+	});
+	
 }
 
 function showPalettePopup(){

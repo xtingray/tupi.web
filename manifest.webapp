@@ -1,16 +1,20 @@
 {
-    "name":"tupi.web",
+    "name": "tupi.web",
+    "version": "0.2",
     "launch_path": "/index.html",
     "developer": {
-        "name":"Tupi Developers Team Firefox OS AppsDays",
-        "url":"http://maefloresta.com"
+        "name": "Tupi Developers Team Firefox OS AppsDays",
+        "url": "http://maefloresta.com"
     },
-    "description":"Tupi WebApp Client",
+    "description": "Tupi WebApp Client",
     "fullscreen": "true",
-    "orientation": ["portrait"],
-    "icons":{
-        "16":"/images/tupi16.png",
-        "32":"/images/tupi32.png",
-        "64":"/images/tupi64.png"
+    "orientation": [
+        "portrait"
+    ],
+    "icons": {
+        "16": "/images/tupi16.png",
+        "32": "/images/tupi32.png",
+        "64": "/images/tupi64.png",
+        "128": "/images/tupi128.png"
     }
 }
